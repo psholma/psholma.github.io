@@ -4,7 +4,7 @@ collection: publications
 category: manuscripts
 permalink: /publication/pentaquark
 excerpt: 'In this paper we extend a simple phenomenological model to investigate the mass spectra of exotic hadrons known as pentaquarks'
-date: 2020
+#date: 2020
 venue: 'Physics Letters B'
 paperurl: 'http://academicpages.github.io/files/pentaquarkpaper.pdf'
 # bibtexurl: 'http://academicpages.github.io/files/bibtex1.bib'
