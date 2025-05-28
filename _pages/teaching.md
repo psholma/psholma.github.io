@@ -1,15 +1,15 @@
 ---
 layout: archive
 title: "Teaching Experience"
-permalink: /teachingmd/
+permalink: /teaching/
 author_profile: true
 ---
 
 {% include base_path %}
 
-TA, KTH Royal Institute of Technology, 2017-2021 and 2024-2025
+KTH Royal Institute of Technology, 2017-2021 and 2024-2025
 ======
-* Voted ``Teaching Assistant of the Year'' for course year 2018/2019 by students at the Environmental Engineering program for which I received an award from their Student Union.
+* Voted "Teaching Assistant of the Year" for course year 2018/2019 by students at the Environmental Engineering program for which I received an award from their Student Union.
 
 Teaching Assistant at the Department of Mathematics where I independently led exercise sessions and seminars for up to 70 students. Additionally, this includes marking assignments and final exams. 16 course instances in total.
 

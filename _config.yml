@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "psholma"
+title                    : "Homepage"
 title_separator          : "-"
 name                     : &name "psholma"
 description              : &description "personal description"
@@ -23,20 +23,20 @@ repository               : "psholma.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Pontus Holma"
   pronouns         : # example: "she/her"  
   bio              : "PhD Student in Cosmology and Machine Learning"
   location         : "Stockholm, Sweden"
-  employer         : "SU"
+  employer         : "Stockholm University"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "pholma@kth.se" 
 
   # Academic websites
   academia         : # URL
-  arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  arxiv            : "https://arxiv.org/search/hep-ph?searchtype=author&query=Holma,+P"
+  googlescholar    : # URL
   impactstory      : # URL
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : # URL
   semantic         : # URL
   pubmed           : # URL
   researchgate     : # URL
@@ -89,7 +89,7 @@ publication_category:
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
-future                   : true
+future                   : false
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false      #change to true to add link to talkmap on talks page
 comments:
