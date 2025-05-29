@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .archive {
+
   margin-bottom: 2em;
 
   @include breakpoint($medium) {
@@ -90,6 +91,8 @@
    ========================================================================== */
 
 .list__item {
+    background-color: rgba(127, 127, 127, 0.25);
+    padding: 0.5em;
   @include breakpoint($medium) {
     padding-right: $right-sidebar-width-narrow;
   }
@@ -113,6 +116,8 @@
    ========================================================================== */
 
 .grid__item {
+    background-color: rgba(127, 127, 127, 0.25);
+    padding: 0.5em;
   margin-bottom: 2em;
 
   .page__meta {

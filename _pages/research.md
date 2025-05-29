@@ -1,5 +1,4 @@
 ---
-layout: archive
 title: "Research Projects"
 permalink: /research/
 author_profile: true
@@ -45,7 +44,11 @@ where we assume a Gaussian likelihood.
 In the flow chart below we see the rough idea of how the algorithm works. We start by generating a sample \\(\boldsymbol{x}\\) from our generative model, we run it through the simulation and then compare the result with the target data. Then, we adjust based on the above loss function. However, given that the simulation is non-differentiable, we replace the simulation with a machine learning model that emulates the gravity model, specifically an architecture known as a U-Net that makes use of convolutional layers and has been proven to be accurate at picking out features at different scales. With this machine learning surrogate model, we can effectively explore the parameter space due to the differentiability.
 
 
-![flowchart](/images/flowchartVI.png)
+<!--![flowchart](/images/flowchartVI.png#size)-->
+<img src="/images/flowchartVI.png" class="center"/>
+<div class="caption">
+<p> Figure 1: Algorithmic flow chart of the learning process </p>
+</div>
 
 
 
@@ -66,7 +69,12 @@ $$
 We now present the cross-correlation coefficient between \\(\boldsymbol{x}_T\\) and our inferred initial conditions \\(C_k(\boldsymbol{x}_T,\boldsymbol{x})\\) as well as the cross-correlation coefficient between the target data \\(\boldsymbol{d}\\) and simulation outputs \\(C_k(\boldsymbol{d}, \boldsymbol{y}_s)\\). In addition, we calculated the cross-correlation \\(C_k(\boldsymbol{d}, \boldsymbol{y}_U)\\) between the target data \\(\boldsymbol{d}\\) and U-net outputs \\(\boldsymbol{y}_U\\) and observed no significant deviation from the cross correlation using the simulation outputs. This suggests that the U-Net captures the same information as the simulation. We average the cross-correlation coefficient across 1000 samples and calculate the \\(1\sigma\\) error and present the results in the below Figure.
 
 
-![cross_corr](/images/cross_corr.png)
+<!--![cross_corr](/images/cross_corr.png "Cross-Correlation")-->
+
+<img src="/images/cross_corr.png" class="center"/>
+<div class="caption">
+<p> Figure 2: Cross-correlation comparisons of generated samples with the ground truth </p>
+</div>
 
 We note a high correlation for smaller k-values, which correspond to larger scales. As we run the data sample through the simulation, we see the cross correlation being pushed up, corresponding to larger regions in the initial conditions collapsing into smaller more dense regions. The behaviour of the cross-correlation is as expected from more advanced simulation, such as the analysis seen in this [paper](https://arxiv.org/abs/2312.09271), albeit the cross correlation in the above figure does not have a high enough cross-correlation across all scales for the test to be conclusive on the scientific viability of the method. Further testing with larger data sizes and more realistic simulations need to be performed to give a more definitive answer into the viablility of this approach, although this proof-of-concept showcases promise.
 

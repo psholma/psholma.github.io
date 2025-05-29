@@ -44,7 +44,7 @@ $(document).ready(function () {
     setTheme(new_theme);
   };
 
-  $('#theme-toggle').on('click', toggleTheme);
+  //$('#theme-toggle').on('click', toggleTheme);
 
   // These should be the same as the settings in _variables.scss
   const scssLarge = 925; // pixels

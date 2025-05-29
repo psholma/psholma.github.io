@@ -20,9 +20,9 @@ During my bachelor thesis I investigated an exotic type of hadrons known as pent
 
 In a seminar course I also wrote a short review article on the topic of loop quantum gravity, which can be found in the following [link](/files/QG_Report.pdf).
 
-Other Interests
+Other Academic Interests
 ------
-I have additional academic and personal interests in topics related to computing and computer science, specifically High-Performance Computing, GPU programming as well as computer architecture in general. Eventually there will be some blog posts related to these topics as well (hopefully...)
+I have additional interest in topics related to computing and computer science, specifically High-Performance Computing, GPU programming as well as computer architecture in general. Eventually there will be some blog posts related to these topics as well. It'll get done tomorrow...surely?
 
 
 
