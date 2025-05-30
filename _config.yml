@@ -22,10 +22,10 @@ repository               : "psholma.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile1.jpg"
   name             : "Pontus Holma"
   pronouns         : # example: "she/her"  
-  bio              : "PhD Student in Cosmology and Machine Learning with a passion for finance and hauling earth-shattering loads in the gym"
+  bio              : "PhD Student in Cosmology and Machine Learning with a passion for finance and hoisting earth-shattering loads in the gym with tremendous gusto"
   location         : "Stockholm, Sweden"
   employer         : "Stockholm University"
   uri              : # URL

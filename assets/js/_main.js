@@ -25,7 +25,7 @@ $(document).ready(function () {
     }
   };
 
-  setTheme();
+  //setTheme();
 
   // if user hasn't chosen a theme, follow OS changes
   window

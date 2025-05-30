@@ -6,12 +6,14 @@ author_profile: true
 
 {% include base_path %}
 
-
+My master thesis on the below research project can be found in this [university archive](https://www.diva-portal.org/smash/record.jsf?pid=diva2:1873671).
 * Inference of Cosmic Initial Conditions Powered by Machine Learning
 ======
 
-In general, the development of inference frameworks to study cosmic initial conditions is a daunting task. This question is especially relevant to investigate with the advent of next-generation galaxy surveys the coming decade, which will generate enormous amounts of data. In this project, we considered a focus on the approach of leveraging cosmic Large-Scale Structure seen at extragalatic scales, aiming to use information encoded in these structures as an aid to understanding the initial conditions of the early Universe. Naturally, there are highly complex physics processes, many of them affecting each other, which would need to be considered for a proper analysis of the initial evolution of the Universe. As this is generally intractable, we start by looking at a simple proof-of-concept inference pipeline at small data scales, with the hope of guiding us towards more advanced approaches. Specifically, we leverage deep learning technologies to create a generative model of cosmic initial conditions paired with a fast machine learning surrogate model emulating the complex gravitational structure formation. The specific shape of a configuration of the observed galaxy distribution retains a memory of its initial conditions and the physical processes that shaped it. To recover this information, we employ this novel machine learning approach by leveraging the hierarchical nature of structure formation.
+In general, the development of inference frameworks to study cosmic initial conditions is a daunting task. This question is especially relevant to investigate right now, given the advent of next-generation galaxy surveys in the coming decade, which will generate enormous amounts of data. In this project, we considered a focus on the approach of leveraging cosmic Large-Scale Structure seen at extragalatic scales, aiming to use information encoded in these structures as an aid to understanding the initial conditions of the early Universe. Naturally, there are multiple highly complex physics processes, many of them affecting each other, which would need to be considered for a proper analysis of the initial evolution of the Universe. As this is generally infeasible, we start by looking at a simple proof-of-concept inference pipeline at small data scales, with the hope of guiding us towards more advanced approaches. Specifically, we leverage deep learning technologies to create a generative model of cosmic initial conditions paired with a fast machine learning surrogate model emulating the complex gravitational structure formation. The specific shape of a configuration of the observed galaxy distribution retains a memory of its initial conditions and the physical processes that shaped it. To recover this information, we employ this novel machine learning approach by leveraging the hierarchical nature of structure formation.
 
+Method and results
+======
 Our aim is to use the hierarchical structure formation by representing the initial density field with different resolutions, with invertible transformations between these representations. Given that the representations are not fully independent, for example by considering the conservation of mass, we can effectively reduce our parameter space by several orders of magnitude, compared to inferring the initial density at a high resolution right away. In this post we skim over the details, but they can be found in the full thesis. 
 
 
@@ -39,9 +41,9 @@ Denote the data instance we want to infer the initial conditions from by \\(\bol
 $$
     \mathcal{L}(\boldsymbol{z}, \lambda ) = -\frac{1}{2}\sum_{i=1}^N \sum_{j=1}^N \sum_{k=1}^N\bigg\{\bigg[ \frac{d_{ijk}-\hat{f}(\boldsymbol{z})}{\lambda}\bigg]^2 - z_{ijk}^2\bigg\},$$
 
-where we assume a Gaussian likelihood.
+where we assume a Gaussian likelihood with \\(\lambda\\) as our noise parameter and a Gaussian white noise field as our prior.
 
-In the flow chart below we see the rough idea of how the algorithm works. We start by generating a sample \\(\boldsymbol{x}\\) from our generative model, we run it through the simulation and then compare the result with the target data. Then, we adjust based on the above loss function. However, given that the simulation is non-differentiable, we replace the simulation with a machine learning model that emulates the gravity model, specifically an architecture known as a U-Net that makes use of convolutional layers and has been proven to be accurate at picking out features at different scales. With this machine learning surrogate model, we can effectively explore the parameter space due to the differentiability.
+In the flow chart below we see the rough idea of how the algorithm works. We start by generating a sample \\(\boldsymbol{x}\\) from our generative model, we run it through the simulation and then compare the result with the target data. Then, we adjust based on the above loss function. However, given that the simulation is non-differentiable, we replace the simulation with a machine learning model that emulates the gravity model. More specifically, we use an architecture known as U-Net, which makes use of convolutional layers and has been proven to be accurate at feature extraction at different scales. With this machine learning surrogate model, we can effectively explore the parameter space due to the differentiability.
 
 
 <!--![flowchart](/images/flowchartVI.png#size)-->
@@ -78,7 +80,7 @@ We now present the cross-correlation coefficient between \\(\boldsymbol{x}_T\\) 
 
 We note a high correlation for smaller k-values, which correspond to larger scales. As we run the data sample through the simulation, we see the cross correlation being pushed up, corresponding to larger regions in the initial conditions collapsing into smaller more dense regions. The behaviour of the cross-correlation is as expected from more advanced simulation, such as the analysis seen in this [paper](https://arxiv.org/abs/2312.09271), albeit the cross correlation in the above figure does not have a high enough cross-correlation across all scales for the test to be conclusive on the scientific viability of the method. Further testing with larger data sizes and more realistic simulations need to be performed to give a more definitive answer into the viablility of this approach, although this proof-of-concept showcases promise.
 
-* Challenges and Outlook
+Challenges and Outlook
 ======
 
 Some of the challenges include the minimization of the KL-divergence, as it can be prone to get stuck in local optimum in the training process. One method we used to counter this was to impose regularization by discouraging parameter values far away from the expected behaviour of the initial density field, namely that inflation theory predicts a Gaussian density field.
